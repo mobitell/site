@@ -1,0 +1,14 @@
+{
+	"name": "mobitell",
+	"version": "1.0.0",
+	"description": "",
+	"main": "assets/vendor/enduro/index.js",
+	"scripts": {
+		"start": "node_modules/.bin/enduro start"
+	},
+	"author": "Ivan Mogilevsky",
+	"license": "MIT",
+	"dependencies": {
+		"enduro": "*"
+	}
+}

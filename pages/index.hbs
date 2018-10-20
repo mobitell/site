@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="{{seo.description}}">
+   <meta name="author" content="">
+
+   <title>{{seo.title}}</title>
+
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+   <link
+      href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+   <link
+      href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+      rel='stylesheet' type='text/css'>
+   <link href="/assets/css/main.css" rel="stylesheet">
+   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body id="page-top">
+{{>header}}
+
+<header class="masthead text-center text-white d-flex" style="background-image:url({{first_slide.background_image}})">
+   <div class="masthead-overlay"></div>
+   <div class="container my-auto">
+      <div class="row">
+         <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+               <strong>{{first_slide.header}}</strong>
+            </h1>
+            <a class="btn btn-primary js-scroll-trigger" href="#contact" role="button">Бесплатная диагностика</a>
+         </div>
+      </div>
+   </div>
+</header>
+
+<section class="bg-primary" id="about">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">{{why_we.header}}</h2>
+            <hr class="my-4">
+            <p class="mb-4">{{why_we.description}}</p>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         {{#each why_we.list_of_why}}
+            <div class="col-lg-4 col-md-6 text-center">
+               <div class="service-box mt-5 mx-auto">
+                  <i class="fa fa-4x fa-{{icon}} mb-3 sr-icon-1"></i>
+                  <h3 class="mb-3">{{title}}</h3>
+                  <p class="text-muted mb-0">{{post}}</p>
+               </div>
+            </div>
+         {{/each}}
+      </div>
+   </div>
+</section>
+
+<section id="news" class="bg-shine news">
+   <div class="review-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="review-bg__svg">
+         <path class="review-shape-fill" d="M761.9,40.6L643.1,24L333.9,93.8L0.1,1H0v99h1000V1"></path>
+      </svg>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <h2 class="section-heading">{{news.header}}</h2>
+            <hr class="my-4">
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         {{#each news.list}}
+            <div class="col-lg-6 col-md-6 text-center">
+               <div class="service-box mt-5 mx-auto">
+                  <h3 class="mb-3">{{text}}</h3>
+               </div>
+            </div>
+         {{/each}}
+      </div>
+   </div>
+</section>
+
+<section id="service">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <h2 class="section-heading">{{our_service.header}}</h2>
+            <hr class="my-4">
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         {{#each our_service.list_of_service}}
+            <div class="col-lg-6 col-md-6 text-center">
+               <div class="service-box mt-5 mx-auto">
+                  <i class="fa fa-4x fa-{{icon}} mb-3 sr-icon-1"></i>
+                  <input type="checkbox" id="spoiler{{@index}}"/>
+                  <label for="spoiler{{@index}}">{{title}}</label>
+                  <div class="spoiler">{{text}}</div>
+               </div>
+            </div>
+         {{/each}}
+      </div>
+   </div>
+</section>
+
+<section id="review" class="bg-shine">
+   <div class="review-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="review-bg__svg">
+         <path class="review-shape-fill" d="M761.9,40.6L643.1,24L333.9,93.8L0.1,1H0v99h1000V1"></path>
+      </svg>
+   </div>
+   <div class="container review-container">
+      <div class="row content-justify-center">
+         {{#each review}}
+            <div class="text-center">
+               <div class="mt-5 mx-auto">
+                  <h3 class="mb-5">{{text}}</h3>
+                  {{#if photo}}
+                     <img src="{{photo}}" class="reviewPhoto" alt="Отзыв {{name}}">
+                  {{/if}}
+                  <p class="mb-3">{{name}}</p>
+               </div>
+            </div>
+         {{/each}}
+      </div>
+   </div>
+</section>
+
+<section id="contact">
+   <div class="container">
+      <h2 class="section-heading our-contact">{{global.contacts.header}}</h2>
+      <div class="row">
+         <div class="col-lg-6 text-center">
+            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+            {{#each global.contacts.phone}}
+               <p>{{number}}</p>
+            {{/each}}
+            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+            <p>{{global.contacts.email}}</p>
+            <i class="fas fa-map-marker fa-3x mb-3 sr-contact-2"></i>
+            <p class="contacts-address">{{global.contacts.address}}</p>
+         </div>
+         <div class="col-lg-6">
+            <iframe title="Карта"
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A57e6988535dda6b2cca6bb838771a075e1e24ec71ca2f0a60b3241aae710c843&amp;source=constructor"
+                    width="500" height="400" frameborder="0"></iframe>
+         </div>
+      </div>
+   </div>
+</section>
+
+{{>footer}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/creative.js"></script>
+</body>
+
+</html>
