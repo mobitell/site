@@ -52,7 +52,7 @@
 		]
 	},
 	our_service: {
-		header: 'Наши сервисы',
+		header: 'Наши услуги',
 		list_of_service: [
 			{
 				$icon_type: 'fa',
