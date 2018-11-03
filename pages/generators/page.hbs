@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>{{seo.title}}</title>
+   <link rel="stylesheet" href="/assets/css/main.css">
+   <link href="https://fonts.googleapis.com/css?family=Lato:100,200" rel="stylesheet">
+   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+{{#each content}}
+   {{#if visible}}
+      <section class="screen" style="background: {{colorBG}}; background-image: url({{imgBG}})">
+         {{#if imgBG}}
+            <div class="image-overlay"></div>
+         {{/if}}
+         <div class="center_block">
+            <p class="huge">{{header}}</p>
+            <h3>{{{subheader}}}</h3>
+            <p class="main-paragraph">{{text}}</p>
+            <ol>
+               {{#each list}}
+                  {{#if icon}}
+                     <i class="fa fa-4x fa-{{icon}} mb-3 sr-icon-1"></i>
+                  {{/if}}
+                  {{#if img}}
+                     <img src="{{img}}" class="reviewPhoto"/>
+                  {{/if}}
+                  <li>{{text}}</li>
+               {{/each}}
+            </ol>
+         </div>
+      </section>
+   {{/if}}
+{{/each}}
+</body>
+</html>
